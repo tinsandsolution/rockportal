@@ -1,27 +1,73 @@
-# React + TypeScript + Vite
+## viterjs-template
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+JavaScript + React + Redux + Mui + Axios + ESLint + Prettier
 
-Currently, two official plugins are available:
+![viterjs-template](https://i.ibb.co/xMMGs2Q/Screenshot-2023-07-07-105634.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Getting Started
 
-## Expanding the ESLint configuration
+#### Clone the repo
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
+```
+npx degit emre-cil/viterjs-template my-app
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+```
+cd my-app
+```
+
+#### Install Dependencies
+
+```
+pnpm install
+```
+
+#### Run
+
+```
+pnpm dev
+```
+
+#### Paths
+
+Application using absolute paths
+Example: '@/components/Counter/Counter';
+
+if you don't want to use you can remove these lines from
+
+> vite.config.js
+
+```
+ resolve: {
+    alias: {
+      '@': path.resolve(__dirname, 'src'),
+    },
+    extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
+  },
+```
+
+> jsconfig.json
+
+```
+"paths": {
+      "@/*": ["./*"]
+    }
+```
+
+### Scripts
+
+| Script        | Description                        |
+| ------------- | ---------------------------------- |
+| pnpm dev      | Runs the application.              |
+| pnpm build    | Create builds for the application. |
+| pnpm preview  | Runs the Vite preview              |
+| pnpm lint     | Display eslint errors              |
+| pnpm lint:fix | Fix the eslint errors              |
+| pnpm format   | Runs prettier for all files        |
+| pnpm test     | Run tests                          |
+
+### Check List
+
+```
+
+```
